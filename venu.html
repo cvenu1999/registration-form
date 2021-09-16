@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		 body
+    {
+	    margin:0px;
+	    background-color:darkorange;
+	    color:whitesmoke;
+	    font-family:sans-serif;
+    }
+    
+    #main{
+    width:600px; height:auto; padding-bottom:20px; margin-left:auto; margin-right:auto; 
+    border-radius:5px; padding-left:10px; margin-top:100px; border-top:3px double ; 
+    border-bottom:3px double; padding-top:20px;
+    }
+    
+    #main table
+    {
+    	font-family:"Comic Sans MS";
+    }
+    
+    #main .tb{
+    	height:28px; width:230px; border:1px solid; font-weight:bold; border-left:5px solid blue;
+    }
+    
+    #main .tb:focus{
+    	height:28px; border:1px solid;
+    }
+
+    #main .btn{
+    	width:150px; height:32px; outline:none; font-weight:bold; 
+    text-shadow: 0px 0.5px 0.5px black; border-radius: 2px; color: black;
+    }
+  
+    #main .btn:hover{
+    	background-color:darkorange;border-radius: 2px; color:whitesmoke;
+     }
+	</style>
+</head>
+<body>
+	<div id="main">
+	<div class="h-tag">
+	<h2 align="center">Register Form</h2>
+	</div>
+	<div class="login">
+	<table cellspacing="2" align="center" cellpadding="8" border="0">
+	<tr>
+	<td align="right">Enter Name :</td>
+	<td><input type="text" placeholder="Enter user here" id="t1" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="right">Enter Lastname :</td>
+	<td><input type="text" placeholder="Enter Lastname here" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="right">Enter Email ID :</td>
+	<td><input type="text" placeholder="Enter Email ID here" id="t2" class="tb" /></td>
+	</tr>
+	
+	<tr>
+	<td align="right">Enter DOB :</td>
+	<td><input type="date" placeholder="Enter DOB here" id="t3" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="right">Gender :</td>
+	<td><input type="radio" name="r1" class="tb" />Male
+		<input type="radio" name="r1" class="tb" />FeMale
+	</td>
+	</tr>
+	<tr>
+	<td></td>
+	<td>
+	<input type="reset" value="Clear" onclick="clearFunc()" id="res" class="btn">
+	<input type="submit" value="Register" class="btn" onclick="registration()"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td align="center"><input type="reset" value="Reset" class="btn"></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+	
+
+	<script>
+		 function registration()
+	{
+
+		var name= document.getElementById("t1").value;
+		var email= document.getElementById("t2").value;
+		var birth=document.getElementsById("t3").value;
+		var gender=document.getElementsByClass("tb").value;
+
+		if(name=='')
+		{
+			alert('Please enter your name');
+		}
+		
+		else if(email=='')
+		{
+			alert('Please enter your user email id');
+		}
+	}
+	function clearFunc()
+	{
+		document.getElementById("t1").value="";
+		document.getElementById("t2").value="";
+		document.getElementById("t3").value="";
+		
+		
+	}
+	// var diff=Date.now()-new Date(values["DOB"]);
+	// var age=Math.ceil(diff/(1000*3600*24*365));
+	// if(age<18){
+	// 	alert("age is less than 18");
+	// }
+
+
+	// var user=JSON.parse(localStorage.getItem('user'));
+	// var userData=[{name:document.getElementsById("name").value}
+	// {Email:document.getElementsById("email").value},
+	// {Dob:document.getElementsById("birth").value},
+	// {Gender:document.getElementsByClass("gender").value}];
+
+	// user.push(userData);
+	// localStorage.setItem('user',JSON.stringfy(user));
+
+
+	</script>
+</body>
+</html>
